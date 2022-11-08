@@ -5,16 +5,23 @@ import "./Shop.css"
 
 export default function Shop() {
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([])
 
     useEffect(() => {
         fetch("Products.json")
         .then(resp => resp.json())
         .then(data => setProducts(data))
     }, []);
+
+    function handleAddtoCart(product){
+        //console.log(product);
+        const newCart = [...cart, product]
+        setCart(newCart) 
+    }
+
   return (
     <div>
-      <h2>Our Products</h2>
-      <div className="shop-container">
+      <div className="container">
         <div className="all-products">
             {
                 products.map((product) => {
@@ -24,13 +31,14 @@ export default function Shop() {
                         <p>Stock: {product.stock}</p>
                         <p>Brand: {product.brand}</p>
                         <h4>{product.price}</h4>
-                        <button>Buy Now</button>
+                        <button onClick={() => {handleAddtoCart(product)}}>Buy Now</button>
                     </div>
                 })
             }
         </div>
         <div className="cart-products">
-
+            <h2>CART ITEMS</h2>
+            <p>{cart.length}</p>
         </div>
       </div>
     </div>
