@@ -8,7 +8,7 @@
     grid-template-columns: repeat(3, 1fr);
 }
 .single-product {
-    border: 1px solid gray;
+    border: 1px solid #044d7d;
     margin: 1rem;
     border-radius: 1rem;
 }
@@ -22,8 +22,9 @@
 .single-product button {
     margin: .7rem 0;
     padding: .4rem .8rem;
-    background-color: rgb(121, 171, 20);
+    background-color: #044d7d;
     border: none;
     border-radius: .3rem;
     cursor: pointer;
+    color : white;
 }
