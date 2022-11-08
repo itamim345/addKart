@@ -1,6 +1,7 @@
-.shop-container{
+.container{
     width: 90%;
     display: flex;
+    margin: 0 auto;
 }
 .all-products{
     width: 70%;
@@ -27,4 +28,13 @@
     border-radius: .3rem;
     cursor: pointer;
     color : white;
+}
+.cart-products {
+    width: 30%;
+    background: #ccc;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+.cart-products h2 {
+    text-decoration: underline;
 }
